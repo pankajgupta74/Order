@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,25 +26,19 @@ public class OrderController {
 
 	@CrossOrigin(origins = {"http://webapp-dummycompany.rhcloud.com", "http://localhost:8080"})
 	@RequestMapping("/order")
-	public @ResponseBody Receipt order(@RequestParam("orderItems") String itemsStr) {
+	public @ResponseBody Receipt order(@RequestBody List<PurchaseItem> items) {
+		
 
 		Receipt receipt = null;
-		System.out.println("in purchase" + itemsStr);
-		List<PurchaseItem> items = null;
-
-		ObjectMapper mapper = new ObjectMapper();
+	
 		try {
-
-			List<PurchaseItem> list = mapper.readValue(itemsStr,
-					TypeFactory.defaultInstance().constructCollectionType(List.class, PurchaseItem.class));
-
-			System.out.println("entering placeOrder");
-			receipt = service.placeOrder(list);
+			receipt = service.placeOrder(items);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 
 		return receipt;
 	}
+
 
 }
