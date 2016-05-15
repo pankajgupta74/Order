@@ -2,6 +2,8 @@ package com.rbs.order.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,13 +24,18 @@ public class OrderController {
 
 	@Autowired
 	private OrderService service;
+	
+	Logger logger = LoggerFactory.getLogger(OrderController.class);
 
-	@CrossOrigin(origins = {"http://webapp-dummycompany.rhcloud.com", "http://localhost:8080"})
+	@CrossOrigin(origins = "http://webapp-dummycompany.rhcloud.com")
 	@RequestMapping("/order")
+	
+	
 	public @ResponseBody Receipt order(@RequestParam("orderItems") String itemsStr) {
+		
 
 		Receipt receipt = null;
-		System.out.println("in purchase" + itemsStr);
+		logger.debug("in purchase" + itemsStr);
 		List<PurchaseItem> items = null;
 
 		ObjectMapper mapper = new ObjectMapper();
@@ -37,7 +44,7 @@ public class OrderController {
 			List<PurchaseItem> list = mapper.readValue(itemsStr,
 					TypeFactory.defaultInstance().constructCollectionType(List.class, PurchaseItem.class));
 
-			System.out.println("entering placeOrder");
+			logger.debug("in purchase" + itemsStr);
 			receipt = service.placeOrder(list);
 		} catch (Exception ex) {
 			ex.printStackTrace();

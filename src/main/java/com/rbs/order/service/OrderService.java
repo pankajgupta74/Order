@@ -66,8 +66,8 @@ public class OrderService {
 
 		for (int i = 0; i < items.size(); i++) {
 			PurchaseItem temp = items.get(i);
-			totalPurchaseAmount+=temp.getTotalItemPrice();
-			totalSurchargeAmount+=temp.getItemSurchargeAmount();
+			totalPurchaseAmount+=temp.getTotalPrice();
+			totalSurchargeAmount+=temp.getTotalSurcharge();
 		}
 		
 			receipt = new Receipt(order_reference, items,totalPurchaseAmount,totalSurchargeAmount);
