@@ -2,18 +2,6 @@ package com.rbs.order.domain;
 
 public class PurchaseItem {
 	
-	public String getItem_code() {
-		return item_code;
-	}
-	public void setItem_code(String item_code) {
-		this.item_code = item_code;
-	}
-	public String getItem_type() {
-		return item_type;
-	}
-	public void setItem_type(String item_type) {
-		this.item_type = item_type;
-	}
 	public int getQuantity() {
 		return quantity;
 	}
@@ -32,24 +20,37 @@ public class PurchaseItem {
 	public void setUnitPrice(double unitPrice) {
 		this.unitPrice = unitPrice;
 	}
-	public double getTotalItemPrice() {
-		return totalItemPrice;
+	
+	String item_id;
+	public String getItem_id() {
+		return item_id;
 	}
-	public void setTotalItemPrice(double totalItemPrice) {
-		this.totalItemPrice = totalItemPrice;
+	public void setItem_id(String item_id) {
+		this.item_id = item_id;
 	}
-	public double getItemSurchargeAmount() {
-		return itemSurchargeAmount;
+	public String getUserType() {
+		return userType;
 	}
-	public void setItemSurchargeAmount(double itemSurchargeAmount) {
-		this.itemSurchargeAmount = itemSurchargeAmount;
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
-	String item_code;
-	String item_type;
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+	public double getTotalSurcharge() {
+		return totalSurcharge;
+	}
+	public void setTotalSurcharge(double totalSurcharge) {
+		this.totalSurcharge = totalSurcharge;
+	}
+	String userType;
 	int quantity;
 	String item_name;
 	double unitPrice;
-	double totalItemPrice;
-	double itemSurchargeAmount;
+	double totalPrice;
+	double totalSurcharge ;
 
 }
