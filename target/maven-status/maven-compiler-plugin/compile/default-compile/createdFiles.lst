@@ -1,9 +1,0 @@
-com\rbs\order\domain\Receipt.class
-com\rbs\order\util\MongoConfig.class
-com\rbs\order\util\OrderSequenceGenerator.class
-com\rbs\order\domain\PurchaseItem.class
-com\rbs\order\domain\PurchaseOrder.class
-com\rbs\order\repository\OrderRepository.class
-com\rbs\order\service\OrderService.class
-com\rbs\order\controller\OrderController.class
-com\rbs\order\App.class
