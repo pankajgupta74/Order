@@ -27,7 +27,7 @@ public class OrderController {
 	@RequestMapping("/order")
 	public @ResponseBody Receipt order(@RequestBody List<PurchaseItem> items) {
 		
-
+		//Start
 		Receipt receipt = null;
 	
 		try {
