@@ -20,8 +20,7 @@ import com.rbs.order.service.OrderService;
 public class OrderController {
 
 	@Autowired
-	private OrderService service;
-	
+	private OrderService service;	
 
 	@CrossOrigin(origins = {"http://webapp-dummycompany.rhcloud.com", "http://localhost:8080"})
 	@RequestMapping("/order")
