@@ -22,6 +22,7 @@ public class OrderController {
 	@Autowired
 	private OrderService service;	
 
+	
 	@CrossOrigin(origins = {"http://webapp-dummycompany.rhcloud.com", "http://localhost:8080"})
 	@RequestMapping("/order")
 	public @ResponseBody Receipt order(@RequestBody List<PurchaseItem> items) {
