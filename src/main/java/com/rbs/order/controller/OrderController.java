@@ -15,9 +15,10 @@ import com.rbs.order.domain.PurchaseItem;
 import com.rbs.order.domain.Receipt;
 import com.rbs.order.service.OrderService;
 
+@CrossOrigin
 @RestController
 @ComponentScan("com.rbs.order.service")
-@CrossOrigin(origin = "/**")
+
 public class OrderController {
 
 	@Autowired
