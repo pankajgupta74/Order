@@ -22,7 +22,7 @@ public class OrderController {
 	@Autowired
 	private OrderService service;	
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "*"
 	@RequestMapping("/order")
 	public @ResponseBody Receipt order(@RequestBody List<PurchaseItem> items) {
 		
