@@ -15,6 +15,7 @@ import com.rbs.order.domain.Receipt;
 import com.rbs.order.service.OrderService;
 
 @RestController
+@CrossOrigin
 @ComponentScan("com.rbs.order.service")
 public class OrderController {
 	
