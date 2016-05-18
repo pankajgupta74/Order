@@ -19,6 +19,7 @@ import com.rbs.order.service.OrderService;
 @RestController
 @ComponentScan("com.rbs.order.service")
 public class OrderController {
+	
 
 	@Autowired
 	private OrderService service;	
