@@ -18,7 +18,6 @@ import com.rbs.order.service.OrderService;
 @CrossOrigin
 @RestController
 @ComponentScan("com.rbs.order.service")
-
 public class OrderController {
 
 	@Autowired
