@@ -17,12 +17,12 @@ import com.rbs.order.service.OrderService;
 
 @RestController
 @ComponentScan("com.rbs.order.service")
+@CrossOrigin(origin = "/**")
 public class OrderController {
 
 	@Autowired
 	private OrderService service;	
 
-	@CrossOrigin(origins = "*"
 	@RequestMapping("/order")
 	public @ResponseBody Receipt order(@RequestBody List<PurchaseItem> items) {
 		
